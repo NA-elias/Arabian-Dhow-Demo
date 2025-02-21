@@ -2,49 +2,49 @@ using UnityEngine;
 
 public class ShipController : MonoBehaviour
 {
+    private CharacterController characterController;
+    private InputHandler inputHandler;
+
     [Header("Movement Speeds")]
     [SerializeField] private float shipSpeed = 5.0f;
     [SerializeField] private float boostMultiplier = 2.0f;
 
-    [Header("Look Sensitivity")]
-    [SerializeField] private float mouseSensitivity = 2.0f;
-    [SerializeField] private float upDownRange = 80.0f;
+    [Header("Rotation Settings")]
+    [SerializeField] private float turnSpeed = 90f; // Degrees per second
+    [SerializeField] private float smoothTime = 0.1f; // Smooth dampening factor
 
-    private CharacterController characterController;
-    private InputHandler inputHandler;
-
-    private Vector3 currentMovement;
-
-    private Rigidbody rb;
+    private float currentYaw = 0f;  // Current rotation
+    private float yawVelocity = 0f; // Used for turn smoothing
 
     void Awake()
     {
         characterController = GetComponent<CharacterController>();
         inputHandler = InputHandler.Instance;
-
-        rb = GetComponent<Rigidbody>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         HandleMovement();
-        print(currentMovement * Time.deltaTime);
+        HandleRotation();
+        print(inputHandler.TurnInput);
     }
 
     void HandleMovement()
     {
         float speed = shipSpeed * (inputHandler.SprintValue > 0 ? boostMultiplier : 1f);
+        Vector3 moveDirection = transform.forward * speed;
+        characterController.Move(moveDirection * Time.deltaTime);
+    }
 
-        Vector3 inputDirection = new Vector3(inputHandler.MoveInput.x, 0f, inputHandler.MoveInput.y);
-        Vector3 worldDirection = transform.TransformDirection(inputDirection);
-        worldDirection.Normalize();
+    void HandleRotation()
+    {
+        // Calculate target yaw (turnSpeed determines how fast it turns)
+        float targetYaw = currentYaw + (inputHandler.TurnInput * turnSpeed * Time.deltaTime);
 
-        currentMovement.x = worldDirection.x * speed;
-        // currentMovement.y = 0f;
-        currentMovement.z = worldDirection.z * speed;
+        // Smoothly interpolate toward the target rotation
+        currentYaw = Mathf.SmoothDampAngle(currentYaw, targetYaw, ref yawVelocity, smoothTime);
 
-        // characterController.Move(currentMovement * Time.deltaTime);
-        Vector3 forceDirection = transform.forward * inputHandler.MoveInput.y * shipSpeed * boostMultiplier;
-        rb.AddForce(forceDirection, ForceMode.Acceleration);
+        // Apply rotation
+        transform.rotation = Quaternion.Euler(0, currentYaw, 0);
     }
 }

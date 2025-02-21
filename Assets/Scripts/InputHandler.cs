@@ -16,8 +16,7 @@ public class InputHandler : MonoBehaviour
 {
     private enum PlayerAction
     {
-        Move,
-        Look,
+        Turn,
         Interact,
         Sprint,
     }
@@ -26,8 +25,7 @@ public class InputHandler : MonoBehaviour
 
     public static InputHandler Instance { get; private set; }
 
-    public Vector2 MoveInput { get; private set; }
-    public Vector2 LookInput { get; private set; }
+    public float TurnInput { get; private set; }
     public bool InteractionTriggered { get; private set; }
     public float SprintValue { get; private set; }
 
@@ -64,11 +62,8 @@ public class InputHandler : MonoBehaviour
 
     private void SubscribeInputEvents()
     {
-        gameControlScheme.Player.Move.performed += context => MoveInput = context.ReadValue<Vector2>();
-        gameControlScheme.Player.Move.canceled += _ => MoveInput = Vector2.zero;
-
-        gameControlScheme.Player.Look.performed += context => LookInput = context.ReadValue<Vector2>();
-        gameControlScheme.Player.Move.canceled += _ => MoveInput = Vector2.zero;
+        gameControlScheme.Player.Turn.performed += context => TurnInput = context.ReadValue<float>();
+        gameControlScheme.Player.Turn.canceled += _ => TurnInput = 0f;
 
         gameControlScheme.Player.Interact.performed += _ => InteractionTriggered = true;
         gameControlScheme.Player.Interact.performed += _ => InteractionTriggered = false;

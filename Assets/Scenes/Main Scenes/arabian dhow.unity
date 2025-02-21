@@ -1575,7 +1575,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7602851345004350284}
-  m_LocalEulerAnglesHint: {x: -0.476, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 11, y: 0, z: 0}
 --- !u!1 &1044492164
 GameObject:
   m_ObjectHideFlags: 0
@@ -5480,8 +5480,6 @@ GameObject:
   - component: {fileID: 7602851345004350284}
   - component: {fileID: 7602851345004350287}
   - component: {fileID: 7602851345004350288}
-  - component: {fileID: 7602851345004350290}
-  - component: {fileID: 7602851345004350289}
   m_Layer: 0
   m_Name: Arabian Dhow v1.1
   m_TagString: Untagged
@@ -5565,6 +5563,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 961739753}
   - {fileID: 6331321899208353437}
   - {fileID: 7043644801269387593}
   - {fileID: 2801201890639991888}
@@ -5597,10 +5596,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6785909894ab7544dbc94fe4bf69cfed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipSpeed: 10
+  shipSpeed: 12
   boostMultiplier: 2
-  mouseSensitivity: 2
-  upDownRange: 80
+  turnSpeed: 200
+  smoothTime: 0.1
 --- !u!143 &7602851345004350288
 CharacterController:
   m_ObjectHideFlags: 0
@@ -5617,7 +5616,7 @@ CharacterController:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Height: 2
   m_Radius: 0.5
