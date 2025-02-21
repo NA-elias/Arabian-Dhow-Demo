@@ -5635,9 +5635,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7118240102939464182}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f00757bc3dce824fa26206670cde47c, type: 3}
+  m_Script: {fileID: 11500000, guid: f19b9c3211182be468cf81904d17bf72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalSpeed: 10
+  turnSpeed: 50
+  currentSpeed: 0
 --- !u!54 &7602851345004350290
 Rigidbody:
   m_ObjectHideFlags: 0
