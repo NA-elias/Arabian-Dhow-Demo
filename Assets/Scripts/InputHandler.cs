@@ -57,7 +57,7 @@ public class InputHandler : MonoBehaviour
         gameControlScheme = new GameControlScheme();
 
         SubscribeInputEvents();
-        printDevicesConnected();
+        // printDevicesConnected();
     }
 
     private void SubscribeInputEvents()

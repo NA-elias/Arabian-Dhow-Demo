@@ -26,7 +26,7 @@ public class ShipController : MonoBehaviour
     {
         HandleMovement();
         HandleRotation();
-        print(inputHandler.TurnInput);
+        // print(inputHandler.TurnInput);
     }
 
     void HandleMovement()
