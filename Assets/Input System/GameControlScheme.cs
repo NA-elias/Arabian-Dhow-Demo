@@ -37,6 +37,15 @@ public partial class @GameControlScheme: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""TurnKeyboard"",
+                    ""type"": ""Value"",
+                    ""id"": ""eb9c23b4-dd8a-46ed-952f-57030883a0f9"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
                     ""name"": ""Turn"",
                     ""type"": ""Value"",
                     ""id"": ""76184408-db2c-4d31-8ce7-1b02d5dafd85"",
@@ -505,61 +514,6 @@ public partial class @GameControlScheme: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""7df3cb61-6373-41e3-b476-9ff4b36ea935"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Turn"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""ed128040-4478-4b8b-9de4-3a277ec132b2"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Turn"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""17589d74-87f1-483f-ba09-201992b26272"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Turn"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""017c8f52-cf29-4695-bb45-7e39abf9df60"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Turn"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""4e5ee8ab-eccc-4abe-b545-11668ecd35cc"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Turn"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": """",
                     ""id"": ""bfaf0376-0bdb-4d6d-8cdb-81665c7b6575"",
                     ""path"": ""<Gamepad>/leftStick"",
@@ -584,13 +538,68 @@ public partial class @GameControlScheme: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""63d73e65-d499-4504-ad0f-05b0019a306f"",
-                    ""path"": ""<Touchscreen>/primaryTouch/delta"",
+                    ""path"": ""<Touchscreen>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Touch"",
                     ""action"": ""Turn"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""7df3cb61-6373-41e3-b476-9ff4b36ea935"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TurnKeyboard"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""ed128040-4478-4b8b-9de4-3a277ec132b2"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""TurnKeyboard"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""17589d74-87f1-483f-ba09-201992b26272"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""TurnKeyboard"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""017c8f52-cf29-4695-bb45-7e39abf9df60"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""TurnKeyboard"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""4e5ee8ab-eccc-4abe-b545-11668ecd35cc"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""TurnKeyboard"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -1177,6 +1186,7 @@ public partial class @GameControlScheme: IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
+        m_Player_TurnKeyboard = m_Player.FindAction("TurnKeyboard", throwIfNotFound: true);
         m_Player_Turn = m_Player.FindAction("Turn", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
@@ -1266,6 +1276,7 @@ public partial class @GameControlScheme: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Move;
+    private readonly InputAction m_Player_TurnKeyboard;
     private readonly InputAction m_Player_Turn;
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Attack;
@@ -1280,6 +1291,7 @@ public partial class @GameControlScheme: IInputActionCollection2, IDisposable
         private @GameControlScheme m_Wrapper;
         public PlayerActions(@GameControlScheme wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
+        public InputAction @TurnKeyboard => m_Wrapper.m_Player_TurnKeyboard;
         public InputAction @Turn => m_Wrapper.m_Player_Turn;
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
@@ -1301,6 +1313,9 @@ public partial class @GameControlScheme: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @TurnKeyboard.started += instance.OnTurnKeyboard;
+            @TurnKeyboard.performed += instance.OnTurnKeyboard;
+            @TurnKeyboard.canceled += instance.OnTurnKeyboard;
             @Turn.started += instance.OnTurn;
             @Turn.performed += instance.OnTurn;
             @Turn.canceled += instance.OnTurn;
@@ -1335,6 +1350,9 @@ public partial class @GameControlScheme: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @TurnKeyboard.started -= instance.OnTurnKeyboard;
+            @TurnKeyboard.performed -= instance.OnTurnKeyboard;
+            @TurnKeyboard.canceled -= instance.OnTurnKeyboard;
             @Turn.started -= instance.OnTurn;
             @Turn.performed -= instance.OnTurn;
             @Turn.canceled -= instance.OnTurn;
@@ -1545,6 +1563,7 @@ public partial class @GameControlScheme: IInputActionCollection2, IDisposable
     public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnTurnKeyboard(InputAction.CallbackContext context);
         void OnTurn(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);

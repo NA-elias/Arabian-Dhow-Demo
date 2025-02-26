@@ -26,7 +26,7 @@ public class ShipController : MonoBehaviour
     {
         HandleMovement();
         HandleRotation();
-        // print(inputHandler.TurnInput);
+        print(inputHandler.TouchTurnInput);
     }
 
     void HandleMovement()
@@ -39,7 +39,8 @@ public class ShipController : MonoBehaviour
     void HandleRotation()
     {
         // Calculate target yaw (turnSpeed determines how fast it turns)
-        float targetYaw = currentYaw + (inputHandler.TurnInput * turnSpeed * Time.deltaTime);
+        // float targetYaw = currentYaw + (inputHandler.TurnKeyboardInput * turnSpeed * Time.deltaTime);
+        float targetYaw = currentYaw + (inputHandler.TouchTurnInput.x * turnSpeed * Time.deltaTime);
 
         // Smoothly interpolate toward the target rotation
         currentYaw = Mathf.SmoothDampAngle(currentYaw, targetYaw, ref yawVelocity, smoothTime);
