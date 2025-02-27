@@ -14,13 +14,6 @@ using UnityEngine.InputSystem;
 
 public class InputHandler : MonoBehaviour
 {
-    private enum PlayerAction
-    {
-        Turn,
-        Interact,
-        Sprint,
-    }
-
     private GameControlScheme gameControlScheme;
 
     public static InputHandler Instance { get; private set; }
@@ -65,11 +58,11 @@ public class InputHandler : MonoBehaviour
         gameControlScheme.Player.Turn.performed += context => TurnInput = context.ReadValue<float>();
         gameControlScheme.Player.Turn.canceled += _ => TurnInput = 0f;
 
-        gameControlScheme.Player.Interact.performed += _ => InteractionTriggered = true;
-        gameControlScheme.Player.Interact.performed += _ => InteractionTriggered = false;
+        // gameControlScheme.Player.Interact.performed += _ => InteractionTriggered = true;
+        // gameControlScheme.Player.Interact.canceled += _ => InteractionTriggered = false;
 
-        gameControlScheme.Player.Sprint.performed += context => SprintValue = context.ReadValue<float>();
-        gameControlScheme.Player.Sprint.canceled += _ => SprintValue = 0f;
+        // gameControlScheme.Player.Sprint.performed += context => SprintValue = context.ReadValue<float>();
+        // gameControlScheme.Player.Sprint.canceled += _ => SprintValue = 0f;
     }
 
     void printDevicesConnected()

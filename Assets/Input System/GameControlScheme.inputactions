@@ -16,9 +16,9 @@
                 },
                 {
                     "name": "Turn",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "76184408-db2c-4d31-8ce7-1b02d5dafd85",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -540,7 +540,7 @@
                 {
                     "name": "",
                     "id": "bfaf0376-0bdb-4d6d-8cdb-81665c7b6575",
-                    "path": "<Gamepad>/leftStick",
+                    "path": "<Gamepad>/dpad/x",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
@@ -551,7 +551,7 @@
                 {
                     "name": "",
                     "id": "8a3c6089-cf60-4cf5-8ed6-d40bb59791b1",
-                    "path": "<Joystick>/stick",
+                    "path": "<Joystick>/stick/x",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Joystick",
@@ -560,15 +560,37 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "63d73e65-d499-4504-ad0f-05b0019a306f",
-                    "path": "<Touchscreen>/primaryTouch/delta",
+                    "name": "1D Axis",
+                    "id": "9ab7b8db-0de5-4232-891c-73f42b465812",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Turn",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "0dda86e2-5350-46bb-8b25-eb09dd57714b",
+                    "path": "<Touchscreen>/delta/left",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Touch",
                     "action": "Turn",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "1c97f68c-a313-4cc1-8ca4-fc5776a1d4c0",
+                    "path": "<Touchscreen>/delta/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Touch",
+                    "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },

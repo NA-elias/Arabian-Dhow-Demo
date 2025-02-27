@@ -1,4 +1,7 @@
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 public class ShipController : MonoBehaviour
 {
@@ -26,7 +29,6 @@ public class ShipController : MonoBehaviour
     {
         HandleMovement();
         HandleRotation();
-        // print(inputHandler.TurnInput);
     }
 
     void HandleMovement()
@@ -38,8 +40,10 @@ public class ShipController : MonoBehaviour
 
     void HandleRotation()
     {
+        float clampedInput = Mathf.Clamp(inputHandler.TurnInput, -1, 1);
+
         // Calculate target yaw (turnSpeed determines how fast it turns)
-        float targetYaw = currentYaw + (inputHandler.TurnInput * turnSpeed * Time.deltaTime);
+        float targetYaw = currentYaw + (clampedInput * turnSpeed * Time.deltaTime);
 
         // Smoothly interpolate toward the target rotation
         currentYaw = Mathf.SmoothDampAngle(currentYaw, targetYaw, ref yawVelocity, smoothTime);
