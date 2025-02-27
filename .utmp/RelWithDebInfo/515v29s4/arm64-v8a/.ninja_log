@@ -1,0 +1,12 @@
+# ninja log v5
+163	2110	7622608926991037	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	b766cbb2db421c5b
+1	2189	7622608928113853	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	1b6c92011bf39044
+107	2406	7622608927787546	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	bb960ff6c4b09b9b
+120	2591	7622608929138391	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	2bcee6a84a11334
+97	2627	7622608934189655	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	6f78bdef5fd5b0ce
+1374	2661	7622608934493086	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	985da692314aa006
+613	2690	7622608935621199	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	880ec1383c2e5883
+808	2909	7622608937896095	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	c21eb45d97603b38
+2662	2954	7622608938761800	C:/Users/na-intern/Documents/GitHub/Arabian-Dhow-Demo/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/515v29s4/obj/arm64-v8a/libswappywrapper.so	ed3bd84b69f71b83
+1060	3421	7622608941939861	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	247188808a04a09d
+3421	3707	7622608946264690	C:/Users/na-intern/Documents/GitHub/Arabian-Dhow-Demo/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/515v29s4/obj/arm64-v8a/libgame.so	7558298071e10f5f

@@ -18,8 +18,7 @@ public class InputHandler : MonoBehaviour
 
     public static InputHandler Instance { get; private set; }
 
-    public Vector2 TouchTurnInput { get; private set; }
-    public float TurnKeyboardInput { get; private set; }
+    public float TurnInput { get; private set; }
     public bool InteractionTriggered { get; private set; }
     public float SprintValue { get; private set; }
 
@@ -56,17 +55,14 @@ public class InputHandler : MonoBehaviour
 
     private void SubscribeInputEvents()
     {
-        gameControlScheme.Player.Turn.performed += context => TouchTurnInput = context.ReadValue<Vector2>();
-        gameControlScheme.Player.Turn.canceled += _ => TouchTurnInput = Vector2.zero;
+        gameControlScheme.Player.Turn.performed += context => TurnInput = context.ReadValue<float>();
+        gameControlScheme.Player.Turn.canceled += _ => TurnInput = 0f;
 
-        gameControlScheme.Player.TurnKeyboard.performed += context => TurnKeyboardInput = context.ReadValue<float>();
-        gameControlScheme.Player.TurnKeyboard.canceled += _ => TurnKeyboardInput = 0f;
+        // gameControlScheme.Player.Interact.performed += _ => InteractionTriggered = true;
+        // gameControlScheme.Player.Interact.canceled += _ => InteractionTriggered = false;
 
-        gameControlScheme.Player.Interact.performed += _ => InteractionTriggered = true;
-        gameControlScheme.Player.Interact.performed += _ => InteractionTriggered = false;
-
-        gameControlScheme.Player.Sprint.performed += context => SprintValue = context.ReadValue<float>();
-        gameControlScheme.Player.Sprint.canceled += _ => SprintValue = 0f;
+        // gameControlScheme.Player.Sprint.performed += context => SprintValue = context.ReadValue<float>();
+        // gameControlScheme.Player.Sprint.canceled += _ => SprintValue = 0f;
     }
 
     void printDevicesConnected()
